@@ -30,6 +30,7 @@ public class Frog : MonoBehaviour{
         if(col.tag == "Car")
         {
             Debug.Log("WE LOST !!");
+            Score.CurrentScore = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
