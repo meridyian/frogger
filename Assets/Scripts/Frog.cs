@@ -23,7 +23,7 @@ public class Frog : MonoBehaviour{
     }
 
 
-    //Destroy cars after some seconds
+    //car collision
 
     void OnTriggerEnter2D(Collider2D col)
     {
