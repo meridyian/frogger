@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Frog : MonoBehaviour{
 
@@ -19,5 +20,17 @@ public class Frog : MonoBehaviour{
             rb.MovePosition(rb.position + Vector2.down);
 
 
+    }
+
+
+    //Destroy cars after some seconds
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.tag == "Car")
+        {
+            Debug.Log("WE LOST !!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

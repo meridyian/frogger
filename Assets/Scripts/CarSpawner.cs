@@ -14,6 +14,11 @@ public class CarSpawner : MonoBehaviour
 
     float nextTimeToSpawn = 0f;
 
+    //void Start(){
+    //  InvokeRepeating("SpawnCar", 0f, 3f);
+    //}
+
+
 
     void Update()
     {

@@ -216,6 +216,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDelay: 0.3
   car: {fileID: 6344651273789266795, guid: 6526d427593e446f59af3cfa6cd223ab, type: 3}
+  spawnPoints:
+  - {fileID: 61156460}
+  - {fileID: 867637680}
+  - {fileID: 1975735025}
+  - {fileID: 18186564}
 --- !u!4 &110533709
 Transform:
   m_ObjectHideFlags: 0
@@ -750,7 +755,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
