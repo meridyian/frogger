@@ -7,19 +7,17 @@ public class Frog : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    Score score;
+    public Score score;
 
     public bool isDead = false;
     public Canvas deathCanvas;
 
     public CarSpawner carspawner;
 
-    public void Start()
+    private void Start()
     {
-        Score score = gameObject.GetComponent<Score>();
-       
+        score = FindObjectOfType<Score>();
     }
-
 
     void Update()
     {
@@ -51,11 +49,11 @@ public class Frog : MonoBehaviour
 
     public void Die()
     {
-        
+        score.ShowButton();
         deathCanvas.gameObject.SetActive(true); 
         isDead = true;
         Destroy(gameObject);
-        score.ShowButton();
+        
         carspawner.canspawn = false;
 
     }

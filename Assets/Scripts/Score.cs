@@ -7,8 +7,6 @@ using System;
 public class Score : MonoBehaviour
 {
     public static int CurrentScore = 0;
-   
-    Frog frog;
 
     public GameObject divider;
     public TextMeshProUGUI scoreText;
@@ -25,19 +23,14 @@ public class Score : MonoBehaviour
         scoreText.text = CurrentScore.ToString();
     }
 
-    
     public void ShowButton()
     {
-        if (frog.isDead == true)
-        {
-
-            divider.SetActive(false);
+         divider.SetActive(false);
             
-            totalScoreText.gameObject.SetActive(true);
-            totalScoreText.text = "Total Score: " + CurrentScore.ToString();
-        }
-
+         totalScoreText.gameObject.SetActive(true);
+         totalScoreText.text = "Total Score: " + CurrentScore.ToString();
     }
+
 
     
 
