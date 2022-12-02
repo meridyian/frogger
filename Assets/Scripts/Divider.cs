@@ -6,10 +6,6 @@ public class Divider : MonoBehaviour
 {
     public Score score;
 
-    private void Start()
-    {
-        score.OnLevelEnd += CloseDividers;
-    }
 
     private void CloseDividers()
     {

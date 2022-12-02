@@ -1,16 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Frog : MonoBehaviour{
+public class Frog : MonoBehaviour
+{
 
     public Rigidbody2D rb;
 
-    public Score score;
+    Score score;
+
+    public bool isDead = false;
+    public Canvas deathCanvas;
 
     public CarSpawner carspawner;
 
-
-
+    public void Start()
+    {
+        Score score = gameObject.GetComponent<Score>();
+       
+    }
 
 
     void Update()
@@ -41,11 +49,13 @@ public class Frog : MonoBehaviour{
         }
     }
 
-    private void Die()
+    public void Die()
     {
         
+        deathCanvas.gameObject.SetActive(true); 
+        isDead = true;
         Destroy(gameObject);
-        score.OnLevelEnd.Invoke();
+        score.ShowButton();
         carspawner.canspawn = false;
 
     }
