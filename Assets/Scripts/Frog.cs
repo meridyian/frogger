@@ -5,6 +5,14 @@ public class Frog : MonoBehaviour{
 
     public Rigidbody2D rb;
 
+    public Score score;
+
+    public CarSpawner carspawner;
+
+
+
+
+
     void Update()
     {
         //check for input, 4 keys
@@ -29,9 +37,18 @@ public class Frog : MonoBehaviour{
     {
         if(col.tag == "Car")
         {
-            Debug.Log("WE LOST !!");
-            Score.CurrentScore = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Die();
         }
     }
+
+    private void Die()
+    {
+        
+        Destroy(gameObject);
+        score.OnLevelEnd.Invoke();
+        carspawner.canspawn = false;
+
+    }
+
+
 }
